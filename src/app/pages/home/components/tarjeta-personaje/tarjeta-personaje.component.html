@@ -1,0 +1,17 @@
+<div class="col">
+    <div class="card h-100 text-white bg-dark">
+        <img [src]="personaje.image" class="card-img-top" alt="..." style="height: 100%; width: 100%;">
+        <div class="card-body">
+            <div class="card-body">
+                <h5 class="card-title">{{personaje.name}}</h5>
+                <div>
+                    <span class="badge rounded-pill bg-secondary" style="margin-right: 10px;">{{personaje.species}}</span>
+                    <span class="badge rounded-pill" [ngClass]="setClassStatus()">{{personaje.status}}</span>
+                </div>
+            </div>
+            <div class="row g-0" style="padding: 10px;">
+                <button type="button" class="btn btn-outline-info" (click)="verPresonaje()">Ver Personaje</button>
+            </div>
+        </div>
+    </div>
+</div>

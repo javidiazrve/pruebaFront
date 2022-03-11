@@ -1,0 +1,32 @@
+.container {
+    padding: 20px !important;
+}
+
+.card-body {
+    display: flex;
+}
+
+.Alive {
+    background-color: green;
+}
+
+.Dead {
+    background-color: red;
+}
+
+.unknown {
+    background-color: yellow;
+}
+
+#divStatus {
+    position: absolute;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    .circulo {
+        width: 10px;
+        height: 10px;
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+}

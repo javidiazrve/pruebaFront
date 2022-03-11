@@ -1,0 +1,57 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <button type="button" class="btn btn-outline-secondary" (click)="irAtras()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg>
+            Regresar
+        </button>
+    </div>
+</nav>
+
+<app-spinner *ngIf="cargando"></app-spinner>
+
+<app-error *ngIf="error && !cargando" (evento)="getPersonaje()"></app-error>
+
+<div class="container" *ngIf="!cargando && !error">
+    <div class="card mb-3 text-white bg-dark">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="personaje.image" class="img-fluid rounded-start" style=" width: 100%;" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">{{personaje.name}}</h3>
+                    <div class="separador"></div>
+                    <div id="divStatus">
+                        <div class="circulo" [ngClass]="personaje.status"></div>
+                        {{personaje.status}}
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-white bg-dark">Genero: {{personaje.gender}}</li>
+                    <li class="list-group-item text-white bg-dark">Especie: {{personaje.species}}</li>
+                    <li class="list-group-item text-white bg-dark" *ngIf="personaje.type != ''">Tipo: {{personaje.type}}</li>
+                    <li class="list-group-item text-white bg-dark">Origen: {{personaje.origin}}</li>
+                    <li class="list-group-item text-white bg-dark">Apariciones: {{personaje.episodes.length}}</li>
+                </ul>
+                <div class="card-footer text-center">
+                    <small class="text-muted">Visto por ultima vez en: {{personaje.location}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5>Episodios</h5>
+    <hr>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let episode of personaje.episodes">
+            <div class="d-flex w-100 justify-content-between">
+                <h4 class="mb-1">{{episode.name}}</h4>
+                <small>{{episode.episode}}</small>
+            </div>
+            <p class="mb-1">Estreno: {{episode.air_date}}</p>
+            <!-- <small>Estreno: {{episode.air_date}}</small> -->
+        </li>
+    </ul>
+</div>

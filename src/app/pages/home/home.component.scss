@@ -1,0 +1,22 @@
+.container {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.divBtns {
+    align-items: baseline;
+    p {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button {
+        i {
+            color: white;
+        }
+    }
+}
+
+#cuenta {
+    font-size: large;
+    opacity: 0.6;
+}

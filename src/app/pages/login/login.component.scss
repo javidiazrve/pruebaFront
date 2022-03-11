@@ -1,0 +1,11 @@
+.form {
+    width: 60%;
+    max-width: 400px;
+}
+
+.centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
