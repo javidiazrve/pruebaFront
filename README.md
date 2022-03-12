@@ -1,6 +1,6 @@
 # PruebaFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+App para ver informacion de personajes de rick y morty.
 
 ## Development server
 
