@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   async iniciarSesion(){
+
+    if(this.cargando) return;
     
     this.cargando = true;
     this.error.res = false;

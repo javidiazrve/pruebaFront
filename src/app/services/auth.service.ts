@@ -8,15 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  usuarioActivo: boolean = false;
-
   constructor(private _auth: AngularFireAuth, private _router: Router) { 
   }
   
   login(user: User){
-    
-    return this._auth.signInWithEmailAndPassword(user.email,user.password);
 
+    return this._auth.signInWithEmailAndPassword(user.email,user.password);
+  
   }
 
   registro(user:User){
@@ -29,7 +27,6 @@ export class AuthService {
 
     this._auth.signOut().then(() => {
       this._router.navigate(['login']);
-      
     });
 
   }

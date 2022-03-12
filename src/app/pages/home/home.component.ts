@@ -67,8 +67,9 @@ export class HomeComponent implements OnInit {
           origin: el.origin.name,
           location: el.location.name,
         };
+
         return personaje;
-      })
+      });
 
       this.cargando = false;
     }).catch((err:any)=>{

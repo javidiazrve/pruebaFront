@@ -29,6 +29,8 @@ export class SigninComponent implements OnInit {
 
   async registrarse(){
 
+    if(this.cargando) return;
+
     this.cargando = true;
     this.error.res = false;
 

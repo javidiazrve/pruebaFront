@@ -1,7 +1,7 @@
 <app-error (evento)="reiniciar()" *ngIf="error && !cargando"></app-error>
 
 <div class="container">
-    <nav class="navbar navbar-light bg-light" *ngIf="!error">
+    <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <h3>Personajes</h3>
             <span id="cuenta"><small>Total: {{info.count}}</small></span>
@@ -21,7 +21,6 @@
         </div>
         <hr>
     </nav>
-
 
     <app-lista [personajes]="personajes" *ngIf="!cargando && !error"></app-lista>
 </div>

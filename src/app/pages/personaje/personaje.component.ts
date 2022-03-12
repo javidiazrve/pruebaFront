@@ -8,7 +8,9 @@ import { Episodio, Personaje } from 'src/interfaces';
   templateUrl: './personaje.component.html',
   styleUrls: ['./personaje.component.scss']
 })
+
 export class PersonajeComponent implements OnInit {
+
   cargando: boolean = true;
   error: boolean = false;
   id: string = '';
@@ -28,8 +30,6 @@ export class PersonajeComponent implements OnInit {
     this._personajeService.getPersonaje(this.id).then((res: any) => {
 
       this.personaje = res;
-
-      console.log(this.personaje);
       
       this.cargando = false;
       
